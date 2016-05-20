@@ -1,0 +1,14 @@
+/**
+ * Created by Nithin on 5/16/16.
+ */
+
+var mongoose = require('mongoose');
+
+var ChatRoomsSchema = mongoose.Schema({
+    createdBy:  { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    roomName:   { type: String },
+    users:      [{ type: String }]
+});
+
+
+mongoose.model('ChatRoom', ChatRoomsSchema);
